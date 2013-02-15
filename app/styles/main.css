@@ -34,7 +34,6 @@ strong{
 .hull-quiz__current__questions:after,
 .cf:after { clear: both; }
 
-
 /* Wrapper */
 .quiz-wrapper{
   height:100%;
@@ -48,7 +47,6 @@ strong{
     margin-right: -0.25em;
   }
 
-/* Widget: Quiz */
 [data-hull-widget="quiz@hull"]{
     display:inline-block;
     vertical-align:middle;
@@ -56,6 +54,66 @@ strong{
     padding:1rem 0;
 }
 
+
+/* Intro */
+.hull-quiz--intro{
+
+}
+  .hull-quiz--intro .hull-quiz__title{
+    font-weight:700;
+    font-size:2rem;
+  }
+  .hull-quiz--intro .hull-quiz__description{
+    font-weight:300;
+    text-align:center;
+    font-size:1.25rem;
+    margin-bottom:2rem;
+  }
+
+/* Finished */
+.hull-quiz--finished{
+
+}
+  .hull-quiz--finished .hull-quiz__header{
+
+  }
+  .hull-quiz--finished .hull-quiz__title{
+    margin-bottom:2rem;
+  }
+
+/* Result */
+.hull-quiz--result .hull-quiz__title{
+  font-weight:700;
+  font-size:2rem;
+  margin-bottom:1rem;
+}
+  .hull-quiz--result .hull-quiz__result{
+      text-align:center;
+      font-size:1.25rem;
+      margin-bottom:3rem
+  }
+  .hull-quiz--result .hull-pager__content small{
+      display:block;
+      font-size:.9rem;
+      padding:.5rem 0;
+      /*margin:0 1rem; */
+      opacity:.5;
+  }
+  .hull-quiz--result .hull-pager__content small:after,
+  .hull-quiz--result .hull-pager__content small:before{
+      content:"\2014";
+      margin:0 .2rem;
+      opacity:.75;
+  }
+  .hull-quiz--result .hull-pager__content small+span{
+      cursor:pointer;
+  }
+  .hull-quiz--result .hull-pager__content small+span:hover{
+    border-bottom:1px solid rgba(255,255,255,.25);
+  }
+
+
+/* Question */
 .hull-quiz__question{
     text-align:center;
 }
@@ -64,28 +122,6 @@ strong{
       margin-left:auto;
       margin-right:auto;
   }
-
-.hull-quiz--intro{
-
-}
-  .hull-quiz__title{
-    text-transform:uppercase;
-    font-weight:700;
-    font-size:2.5rem;
-    text-align:center;
-  }
-  .hull-quiz__description{
-    font-weight:300;
-    text-align:center;
-    font-size:1.25rem;
-    margin-bottom:3rem;
-  }
-
-.hull-quiz__result{
-    text-align:center;
-    font-size:1.25rem;
-    margin-bottom:3rem
-}
 
 .hull-quiz__current__header{
     text-align:center;
@@ -179,6 +215,10 @@ strong{
   }
     .hull-pager .hull-btn:hover{
         background:rgba(0,0,0,.2);
+    }
+    .hull-pager .hull-btn:active,
+    .hull-pager .hull-btn:focus{
+        background:rgba(0,0,0,.3);
     }
 
 /* Ribbon */
