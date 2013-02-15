@@ -18,6 +18,7 @@ body{
     font:16px/1.5 'Lato', sans-serif;
     font-weight:300;
     text-rendering:optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
     background-color:#292e37;
     color:#fff;
 }
