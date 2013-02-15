@@ -54,7 +54,6 @@ strong{
     padding:1rem 0;
 }
 
-
 /* Intro */
 .hull-quiz--intro{
 
@@ -221,6 +220,23 @@ strong{
         background:rgba(0,0,0,.3);
     }
 
+/* Logo */
+body > footer{
+    position:fixed;
+    bottom:.5rem;
+    left:0;
+    width:100%;
+    text-align:center;
+    font-size:.9rem;
+}
+  body > footer span{
+      opacity:.5;
+  }
+.logo{
+  color:inherit;
+  text-decoration:none;
+}
+
 /* Ribbon */
 .github-ribbon {
     font-size:.9rem;
@@ -245,6 +261,8 @@ strong{
 
 /* Media Queries */
 @media screen and (max-width:640px){
+  .quiz-wrapper{height:auto}
+  body > footer{position:static;}
   .github-ribbon{
     display:none;
   }
