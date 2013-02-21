@@ -10,7 +10,7 @@ This project is built on the Hull platform, with [Aura](github.com/aurajs/aura),
 
 This is demo entirely done with Hull in which you need to guess all the brands based on their colors.
 
-[View demo (http://colors.hull.io/)](http://colors.hull.io/)
+[View demo (http://hull.github.com/hullcolors)](http://hull.github.com/hullcolors)
 
 * Login with Twitter
 * Edit/Add questions
@@ -27,7 +27,7 @@ Linux should mostly work the same.
 1. We instantiated a new hull application using our [Grunt-init task](https://github.com/hull/grunt-init-hull).
 
         grunt-init hullcolors
-    
+
 
 2. After followed the instructions of the Grunt init task, we added a new HTML page to the project called ``edit.html`` and we declared inside a ``quiz_admin@hull`` widget to write our questions.
 
@@ -39,19 +39,19 @@ Linux should mostly work the same.
 
         <!-- Quiz Widget -->
         <div data-hull-widget="quiz@hull" data-hull-id="512383795ef8755c63000001"></div>
-        
+
 4. As we wanted to show a logo instead of the name of the brand in each answer, we needed to override the original ``quiz_answer`` template.
 
     In order to do that we added the file ``quiz_answer.hbs`` in ``app/widgets/quiz/`` and we wrote the following code inside.
-    
+
         <img src="images/icons/{{description}}">
 
 5. As you notice in the demo, we change the background-color at each question.
-    
+
     That's why we created a widget called ``background`` that you can find in ``app/widgets/background``.
-    
+
     This widget listens to all events from the quiz to set the proper background color.
-        
+
 6. Afterwards, we did a bit of CSS to have an effective design. **And that's all!**
 
 
