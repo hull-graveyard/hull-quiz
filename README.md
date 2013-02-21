@@ -1,4 +1,3 @@
-
 # About this project
 
 This project is built on the Hull platform, with [Aura](github.com/aurajs/aura), [Backbone.js](https://github.com/documentcloud/backbone) and lots of other cool libraries.
@@ -8,15 +7,17 @@ This project is built on the Hull platform, with [Aura](github.com/aurajs/aura),
 -----------------------
 # Hullcolors
 
-This is demo entirely done with Hull in which you need to guess all the brands based on their colors.
+This is demo entirely done with Hull.
+The game is to guess the brands name based on it's color.
 
-[View demo (http://hull.github.com/hullcolors)](http://hull.github.com/hullcolors)
+[Play Quiz (http://hull.github.com/hullcolors)](http://hull.github.com/hullcolors)
+
+The following features are demoed in this app.
+It has no server code and barely any Javascript.
 
 * Login with Twitter
 * Edit/Add questions
 * Share your score on Twitter
-
-Best of all, it has no server code and barely any Javascript.
 
 The steps below are tailored for Mac environments :
 Linux should mostly work the same.
@@ -24,35 +25,37 @@ Linux should mostly work the same.
 ## How it was done
 
 
-1. We instantiated a new hull application using our [Grunt-init task](https://github.com/hull/grunt-init-hull).
+1. Create a new Hull app using our [Grunt-init task](https://github.com/hull/grunt-init-hull).
 
         grunt-init hullcolors
 
 
-2. After followed the instructions of the Grunt init task, we added a new HTML page to the project called ``edit.html`` and we declared inside a ``quiz_admin@hull`` widget to write our questions.
+2. Add a new HTML page called ``edit.html``, and insert a ``quiz_admin@hull`` widget to write your questions.
 
         <!-- Quiz Admin Widget -->
-        <div data-hull-widget="quiz_admin@hull" data-hull-id="512383795ef8755c63000001"></div>
+        <div data-hull-widget="quiz_admin@hull"></div>
 
 
-3. Then we added the ``quiz@hull``widget inside the main HTML page.
+3. Copy the newly created Quiz's ID, and insert a ``quiz@hull`` widget inside the main HTML page.
 
         <!-- Quiz Widget -->
         <div data-hull-widget="quiz@hull" data-hull-id="512383795ef8755c63000001"></div>
 
-4. As we wanted to show a logo instead of the name of the brand in each answer, we needed to override the original ``quiz_answer`` template.
+4. We want to show a logo instead of the name of the brand in each answer. To do this, override the original ``quiz_answer`` template.
 
     In order to do that we added the file ``quiz_answer.hbs`` in ``app/widgets/quiz/`` and we wrote the following code inside.
 
         <img src="images/icons/{{description}}">
 
-5. As you notice in the demo, we change the background-color at each question.
+5. As you may notice in the demo, we change the background-color at each question.
 
-    That's why we created a widget called ``background`` that you can find in ``app/widgets/background``.
+    For this, we create a widget called ``background``. Find it in ``app/widgets/background``.
 
     This widget listens to all events from the quiz to set the proper background color.
 
-6. Afterwards, we did a bit of CSS to have an effective design. **And that's all!**
+6. Do a bit of CSS to have an effective design.
+
+7. **There's no step 7.**
 
 
 ## Installing
