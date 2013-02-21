@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>HullColors</title>
+    <title>HullColors - Edit</title>
 
     <!-- Sets initial viewport load and disables zooming  -->
     <meta name="viewport" content="initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
@@ -21,21 +21,16 @@
 
     <!-- endbuild -->
   </head>
-  <body>
+  <body class="edit">
     <!-- Github ribbon -->
     <a href="https://github.com/hull/hullcolors" class="github-ribbon">Fork me on GitHub</a>
 
-    <div class="quiz-wrapper">
-        <!-- Background Widget -->
-        <div data-hull-widget="background"></div>
-        <!-- Quiz Widget -->
-        <div data-hull-widget="quiz@hull" data-hull-id="512383795ef8755c63000001"></div>
+    <div class="edit-wrapper">
+      <h1>Edit quiz</h1>
+      <!-- Quiz Admin Widget -->
+      <div data-hull-widget="quiz_admin@hull"></div>
     </div>
 
-    <!-- Link to Hull -->
-    <footer>
-      <span>powered by </span><a href="http://hull.io" class="logo">hull</a>
-    </footer>
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
     <script src="//hull-js.s3.amazonaws.com/0.2.0/hull.js"></script>
