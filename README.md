@@ -32,7 +32,7 @@ Linux should mostly work the same.
 2. After followed the instructions of the Grunt init task, we added a new HTML page to the project called ``edit.html`` and we declared inside a ``quiz_admin@hull`` widget to write our questions.
 
         <!-- Quiz Admin Widget -->
-        <div data-hull-widget="quiz_admin@hull" data-hull-id="512383795ef8755c63000001"></div>
+        <div data-hull-widget="quiz_admin@hull"></div>
 
 
 3. Then we added the ``quiz@hull``widget inside the main HTML page.
