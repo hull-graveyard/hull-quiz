@@ -7,7 +7,7 @@ This project is built on the Hull platform, with [Aura](github.com/aurajs/aura),
 -----------------------
 # Hullcolors
 
-This is demo entirely done with Hull.
+This is demo a entirely built with Hull.
 The game is to guess the brands name based on it's color.
 
 [Play Quiz (http://hull.github.com/hullcolors)](http://hull.github.com/hullcolors)
