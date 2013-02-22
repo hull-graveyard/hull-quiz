@@ -30,7 +30,7 @@ Linux should mostly work the same.
         grunt-init hullcolors
 
 
-2. Add a new HTML page called ``edit.html``, and insert a ``quiz_admin@hull`` widget to write your questions.
+2. Add a new HTML page called ``admin.html``, and insert a ``quiz_admin@hull`` widget to write your questions.
 
         <!-- Quiz Admin Widget -->
         <div data-hull-widget="quiz_admin@hull"></div>

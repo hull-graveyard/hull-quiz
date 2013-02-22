@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>HullColors - Edit</title>
+    <title>HullColors - Admin</title>
 
     <!-- Sets initial viewport load and disables zooming  -->
     <meta name="viewport" content="initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
@@ -17,16 +17,15 @@
     <link rel="icon" type="image/png" href="images/favicon.png" />
 
     <!-- build:css application.css -->
-    <link rel="stylesheet" href="./styles/main.css">
+    <link rel="stylesheet" href="./styles/normalize.css">
+    <link rel="stylesheet" href="./styles/admin.css">
 
     <!-- endbuild -->
   </head>
-  <body class="edit">
-    <!-- Github ribbon -->
-    <a href="https://github.com/hull/hullcolors" class="github-ribbon">Fork me on GitHub</a>
+  <body class="admin">
 
-    <div class="edit-wrapper">
-      <h1>Edit quiz</h1>
+    <div class="admin-wrapper">
+      <h1 class="align-center">Quiz admin</h1>
       <!-- Quiz Admin Widget -->
       <div data-hull-widget="quiz_admin@hull"></div>
     </div>
