@@ -1,5 +1,4 @@
 Hull.init({
-  appId: "511d17655ef875ff0e00000d",
-  orgUrl: 'http://woupla.hullapp.dev',
-  jsUrl: 'http://js.hull.dev/dist'
+  appId: "512633779e3903afd4000020",
+  orgUrl: 'http://hull-demos.alpha.hullapp.io'
 });
