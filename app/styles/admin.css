@@ -149,7 +149,8 @@ h3.hull-quiz_admin__title{
     margin-bottom:.5em;
     display:block;
 }
-.hull-form__text-input{
+.hull-form__text-input,
+.hull-form__text-input--textarea{
     display:block;
     width:100%;
     background-color: #fff;
@@ -161,10 +162,12 @@ h3.hull-quiz_admin__title{
     box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
     -webkit-font-smoothing: antialiased;
 }
-    .hull-form__text-input:focus{
+    .hull-form__text-input:focus,
+    .hull-form__text-input--textarea:focus{
         outline:none;
         border-color:#999;
     }
+.hull-quiz_admin__form--import ul,
 .hull-quiz_admin__form--add ul{
     list-style-type:none;
     padding-left:0;

@@ -1,4 +1,7 @@
 Hull.init({
-  appId: "512633779e3903afd4000020",
-  orgUrl: 'http://hull-demos.alpha.hullapp.io'
+  appId:'51265e825ef875fbf0000006',
+  orgUrl: 'http://victor.hullapp.dev',
+  jsUrl: 'http://js.hull.dev/dist',
+  debug: true
 });
+
