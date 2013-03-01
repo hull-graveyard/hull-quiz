@@ -3,7 +3,7 @@
 
 /*global Hull:true */
 Hull.widget("background", {
-
+  templates: [ 'main' ],
   initialize: function() {
     var $body = $('body');
 
