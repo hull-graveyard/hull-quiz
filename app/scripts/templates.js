@@ -47,10 +47,10 @@ function program3(depth0,data) {
     + escapeExpression(((stack1 = ((stack1 = depth0.quiz),stack1 == null || stack1 === false ? stack1 : stack1.name)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
     + "</h1>\n    <p class=\"hull-quiz__description\">"
     + escapeExpression(((stack1 = ((stack1 = depth0.quiz),stack1 == null || stack1 === false ? stack1 : stack1.description)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
-    + "</p>\n  </div>\n\n  BANG\n\n  <div class=\"hull-pager\">\n    <div class=\"hull-pager__content\">\n      ";
+    + "</p>\n  </div>\n\n  <div class=\"hull-pager\">\n    <div class=\"hull-pager__content\">\n      ";
   stack2 = helpers['if'].call(depth0, depth0.loggedIn, {hash:{},inverse:self.program(3, program3, data),fn:self.program(1, program1, data),data:data});
   if(stack2 || stack2 === 0) { buffer += stack2; }
-  buffer += "\n    </div>\n  </div>\n\n</div>\n";
+  buffer += "\n    </div>\n  </div>\n\n</div>";
   return buffer;
   });
 
