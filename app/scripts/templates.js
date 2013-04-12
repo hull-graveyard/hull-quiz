@@ -1,9 +1,16 @@
 this["Hull"] = this["Hull"] || {};
 this["Hull"]["templates"] = this["Hull"]["templates"] || {};
 
-this["Hull"]["templates"]["background/main"] = undefined;
+this["Hull"]["templates"]["background/main"] = function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  
 
-this["Hull"]["templates"]["quiz/quiz_answer"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
+
+  return " \n";
+  };
+
+this["Hull"]["templates"]["quiz/quiz_answer"] = function (Handlebars,depth0,helpers,partials,data) {
   this.compilerInfo = [2,'>= 1.0.0-rc.3'];
 helpers = helpers || Handlebars.helpers; data = data || {};
   var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression;
@@ -15,18 +22,18 @@ helpers = helpers || Handlebars.helpers; data = data || {};
   buffer += escapeExpression(stack1)
     + "\">\n";
   return buffer;
-  });
+  };
 
-this["Hull"]["templates"]["quiz/quiz_finished"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
+this["Hull"]["templates"]["quiz/quiz_finished"] = function (Handlebars,depth0,helpers,partials,data) {
   this.compilerInfo = [2,'>= 1.0.0-rc.3'];
 helpers = helpers || Handlebars.helpers; data = data || {};
   
 
 
   return "<div class=\"hull-quiz hull-quiz--finished\">\n  <div class=\"hull-quiz__header\">\n    <h1 class=\"hull-quiz__title\">Congratulations. You have finished the  quiz!</h1>\n  </div>\n\n  <div class=\"hull-pager\">\n    <div class=\"hull-pager__content\">\n      <button data-hull-action=\"submit\" class=\"hull-btn\">Submit</button>\n    </div>\n  </div>\n</div>";
-  });
+  };
 
-this["Hull"]["templates"]["quiz/quiz_intro"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
+this["Hull"]["templates"]["quiz/quiz_intro"] = function (Handlebars,depth0,helpers,partials,data) {
   this.compilerInfo = [2,'>= 1.0.0-rc.3'];
 helpers = helpers || Handlebars.helpers; data = data || {};
   var buffer = "", stack1, stack2, functionType="function", escapeExpression=this.escapeExpression, self=this;
@@ -52,9 +59,9 @@ function program3(depth0,data) {
   if(stack2 || stack2 === 0) { buffer += stack2; }
   buffer += "\n    </div>\n  </div>\n\n</div>";
   return buffer;
-  });
+  };
 
-this["Hull"]["templates"]["quiz/quiz_question"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
+this["Hull"]["templates"]["quiz/quiz_question"] = function (Handlebars,depth0,helpers,partials,data) {
   this.compilerInfo = [2,'>= 1.0.0-rc.3'];
 helpers = helpers || Handlebars.helpers; partials = partials || Handlebars.partials; data = data || {};
   var buffer = "", stack1, stack2, options, functionType="function", escapeExpression=this.escapeExpression, self=this, blockHelperMissing=helpers.blockHelperMissing;
@@ -149,9 +156,9 @@ function program9(depth0,data) {
   if(stack2 || stack2 === 0) { buffer += stack2; }
   buffer += "\n  </div>\n</div>";
   return buffer;
-  });
+  };
 
-this["Hull"]["templates"]["quiz/quiz_result"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
+this["Hull"]["templates"]["quiz/quiz_result"] = function (Handlebars,depth0,helpers,partials,data) {
   this.compilerInfo = [2,'>= 1.0.0-rc.3'];
 helpers = helpers || Handlebars.helpers; data = data || {};
   var buffer = "", stack1, stack2, functionType="function", escapeExpression=this.escapeExpression, self=this, blockHelperMissing=helpers.blockHelperMissing;
@@ -182,4 +189,4 @@ function program1(depth0,data) {
     + escapeExpression(((stack1 = ((stack1 = depth0.result),stack1 == null || stack1 === false ? stack1 : stack1.name)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
     + ". Can you beat me?\">Share your score on Twitter</button>\n      <small>or</small>\n      <span data-hull-action=\"start\">Try again</span>\n    </div>\n  </div>\n\n</div>";
   return buffer;
-  });
+  };
