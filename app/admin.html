@@ -4,9 +4,6 @@
     <meta charset="utf-8">
     <title>HullColors - Admin</title>
 
-    <!-- Sets initial viewport load and disables zooming  -->
-    <meta name="viewport" content="initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
-
     <!-- Makes your prototype chrome-less once bookmarked to your phone's home screen -->
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
@@ -16,23 +13,25 @@
     <link rel="apple-touch-icon-precomposed" sizes="57x57" href="images/apple-touch-icon-57x57.png">
     <link rel="icon" type="image/png" href="images/favicon.png" />
 
-    <!-- build:css application.css -->
-    <link rel="stylesheet" href="./styles/normalize.css">
+    <link rel="stylesheet" href="//hullstrap.s3.amazonaws.com/stylesheets/hullstrap.css">
     <link rel="stylesheet" href="./styles/admin.css">
 
     <!-- endbuild -->
   </head>
-  <body class="admin">
-
-    <div class="admin-wrapper">
-      <h1 class="align-center">Quiz admin</h1>
-      <!-- Quiz Admin Widget -->
-      <div data-hull-widget="quiz_admin@hull"></div>
+  <body class="">
+    <div class="container">
+      <div class="page-header">
+        <h1 class="text-center">Quiz admin</h1>
+      </div>
+      <div class="admin-wrapper">
+        <div data-hull-widget="admin/quiz@hull"></div>
+      </div>
     </div>
 
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-    <script src="//hull-js.s3.amazonaws.com/develop/hull.js"></script>
+    <script src="http://js.hull.dev/dist/develop/hull.js"></script>
+    <script src="//hullstrap.s3.amazonaws.com/javascripts/hullstrap.js" type="text/javascript" charset="utf-8"></script>
 
     <!-- build:js application.js -->
     <script src="scripts/hull-init.js"></script>

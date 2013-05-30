@@ -2,7 +2,7 @@ this["Hull"] = this["Hull"] || {};
 this["Hull"]["templates"] = this["Hull"]["templates"] || {};
 
 this["Hull"]["templates"]["background/main"] = function (Handlebars,depth0,helpers,partials,data) {
-  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+  this.compilerInfo = [3,'>= 1.0.0-rc.4'];
 helpers = helpers || Handlebars.helpers; data = data || {};
   
 
@@ -10,8 +10,79 @@ helpers = helpers || Handlebars.helpers; data = data || {};
   return " \n";
   };
 
+this["Hull"]["templates"]["identity/identity"] = function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [3,'>= 1.0.0-rc.4'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression, helperMissing=helpers.helperMissing, self=this, blockHelperMissing=helpers.blockHelperMissing;
+
+function program1(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n  <div class=\"hull-media hull-identity\">\n     <img src=\""
+    + escapeExpression(((stack1 = ((stack1 = depth0.me),stack1 == null || stack1 === false ? stack1 : stack1.picture)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "\" alt=\""
+    + escapeExpression(((stack1 = ((stack1 = depth0.me),stack1 == null || stack1 === false ? stack1 : stack1.name)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "\" class=\"hull-media__img\">\n     <div class=\"hull-media__body\">\n       <h1 class=\"hull-identity__name\">"
+    + escapeExpression(((stack1 = ((stack1 = depth0.me),stack1 == null || stack1 === false ? stack1 : stack1.name)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "</h1>\n       <p class=\"hull-identity__description\">"
+    + escapeExpression(((stack1 = ((stack1 = depth0.me),stack1 == null || stack1 === false ? stack1 : stack1.description)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "</p>\n       <hr class=\"hull-rule\">\n        <button data-hull-action=\"logout\" class=\"hull-btn\">Logout</button>\n     </div>\n  </div>\n";
+  return buffer;
+  }
+
+function program3(depth0,data) {
+  
+  var buffer = "", stack1, options;
+  buffer += "\n  ";
+  options = {hash:{},inverse:self.noop,fn:self.program(4, program4, data),data:data};
+  if (stack1 = helpers.authServices) { stack1 = stack1.call(depth0, options); }
+  else { stack1 = depth0.authServices; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  if (!helpers.authServices) { stack1 = blockHelperMissing.call(depth0, stack1, options); }
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\n \n  ";
+  options = {hash:{},inverse:self.program(6, program6, data),fn:self.noop,data:data};
+  if (stack1 = helpers.authServices) { stack1 = stack1.call(depth0, options); }
+  else { stack1 = depth0.authServices; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  if (!helpers.authServices) { stack1 = blockHelperMissing.call(depth0, stack1, options); }
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\n";
+  return buffer;
+  }
+function program4(depth0,data) {
+  
+  var buffer = "", stack1, options;
+  buffer += "\n  <div class=\"hull-identity-disconnected\">\n    <button data-hull-action=\"login\" data-hull-provider=\""
+    + escapeExpression((typeof depth0 === functionType ? depth0.apply(depth0) : depth0))
+    + "\" class=\"hull-btn\">\n      Sign In with ";
+  options = {hash:{},data:data};
+  buffer += escapeExpression(((stack1 = helpers.classify),stack1 ? stack1.call(depth0, depth0, options) : helperMissing.call(depth0, "classify", depth0, options)))
+    + "\n    </button>\n  </div>\n  ";
+  return buffer;
+  }
+
+function program6(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n  ";
+  stack1 = helpers['if'].call(depth0, depth0.debug, {hash:{},inverse:self.noop,fn:self.program(7, program7, data),data:data});
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\n  ";
+  return buffer;
+  }
+function program7(depth0,data) {
+  
+  
+  return "\n    No Auth Services configured, please add at least one in the admin.\n  ";
+  }
+
+  stack1 = helpers['if'].call(depth0, depth0.loggedIn, {hash:{},inverse:self.program(3, program3, data),fn:self.program(1, program1, data),data:data});
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\n";
+  return buffer;
+  };
+
 this["Hull"]["templates"]["quiz/quiz_answer"] = function (Handlebars,depth0,helpers,partials,data) {
-  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+  this.compilerInfo = [3,'>= 1.0.0-rc.4'];
 helpers = helpers || Handlebars.helpers; data = data || {};
   var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression;
 
@@ -25,7 +96,7 @@ helpers = helpers || Handlebars.helpers; data = data || {};
   };
 
 this["Hull"]["templates"]["quiz/quiz_finished"] = function (Handlebars,depth0,helpers,partials,data) {
-  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+  this.compilerInfo = [3,'>= 1.0.0-rc.4'];
 helpers = helpers || Handlebars.helpers; data = data || {};
   
 
@@ -34,7 +105,7 @@ helpers = helpers || Handlebars.helpers; data = data || {};
   };
 
 this["Hull"]["templates"]["quiz/quiz_intro"] = function (Handlebars,depth0,helpers,partials,data) {
-  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+  this.compilerInfo = [3,'>= 1.0.0-rc.4'];
 helpers = helpers || Handlebars.helpers; data = data || {};
   var buffer = "", stack1, stack2, functionType="function", escapeExpression=this.escapeExpression, self=this;
 
@@ -62,7 +133,7 @@ function program3(depth0,data) {
   };
 
 this["Hull"]["templates"]["quiz/quiz_question"] = function (Handlebars,depth0,helpers,partials,data) {
-  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+  this.compilerInfo = [3,'>= 1.0.0-rc.4'];
 helpers = helpers || Handlebars.helpers; partials = partials || Handlebars.partials; data = data || {};
   var buffer = "", stack1, stack2, options, functionType="function", escapeExpression=this.escapeExpression, self=this, blockHelperMissing=helpers.blockHelperMissing;
 
@@ -96,7 +167,7 @@ function program2(depth0,data) {
   else { stack1 = depth0.description; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
     + "</h5>\n          <ol class=\"hull-quiz__question__anwsers\">\n              ";
-  options = {hash:{},inverse:self.noop,fn:self.programWithDepth(program3, data, depth0),data:data};
+  options = {hash:{},inverse:self.noop,fn:self.programWithDepth(3, program3, data, depth0),data:data};
   if (stack1 = helpers.answers) { stack1 = stack1.call(depth0, options); }
   else { stack1 = depth0.answers; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   if (!helpers.answers) { stack1 = blockHelperMissing.call(depth0, stack1, options); }
@@ -159,7 +230,7 @@ function program9(depth0,data) {
   };
 
 this["Hull"]["templates"]["quiz/quiz_result"] = function (Handlebars,depth0,helpers,partials,data) {
-  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+  this.compilerInfo = [3,'>= 1.0.0-rc.4'];
 helpers = helpers || Handlebars.helpers; data = data || {};
   var buffer = "", stack1, stack2, functionType="function", escapeExpression=this.escapeExpression, self=this, blockHelperMissing=helpers.blockHelperMissing;
 
