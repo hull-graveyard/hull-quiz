@@ -26,6 +26,7 @@ Hull.component({
 
   datasources: {
     users: 'users'
+    app: 'app'
   },
 
   initialize: function() {
