@@ -47,8 +47,12 @@ strong{
     margin-right: -0.25em;
   }
 
-[data-hull-widget="background"]{display:none;}
-[data-hull-widget="quiz@hull"]{
+  .hidden{
+    display: none;
+  }
+
+[data-hull-component="background"]{display:none;}
+[data-hull-component="games/quiz"]{
   display:inline-block;
   vertical-align:middle;
   width:95%;
@@ -56,20 +60,17 @@ strong{
 }
 
 /* Intro */
-.hull-quiz--intro{
-
+.hull-quiz--intro .hull-quiz__title{
+  font-weight:700;
+  font-size:2rem;
 }
-  .hull-quiz--intro .hull-quiz__title{
-    font-weight:700;
-    font-size:2rem;
-  }
-  .hull-quiz--intro .hull-quiz__description{
-    font-weight:300;
-    text-align:center;
-    font-size:1.25rem;
-    margin-bottom:2rem;
-  }
-  .hull-idendity--disconnected{display:inline-block;}
+.hull-quiz--intro .hull-quiz__description{
+  font-weight:300;
+  text-align:center;
+  font-size:1.25rem;
+  margin-bottom:2rem;
+}
+.hull-idendity--disconnected{display:inline-block;}
 
 /* Finished */
 .hull-quiz--finished{

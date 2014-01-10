@@ -30,28 +30,28 @@ Linux should mostly work the same.
         grunt-init hullcolors
 
 
-2. Add a new HTML page called ``admin.html``, and insert a ``quiz_admin@hull`` widget to write your questions.
+2. Add a new HTML page called ``admin.html``, and insert a ``quiz_admin@hull`` component to write your questions.
 
-        <!-- Quiz Admin Widget -->
-        <div data-hull-widget="quiz_admin@hull"></div>
+        <!-- Quiz Admin Component -->
+        <div data-hull-component="admin/quiz@hull"></div>
 
 
-3. Copy the newly created Quiz's ID, and insert a ``quiz@hull`` widget inside the main HTML page.
+3. Copy the newly created Quiz's ID, and insert a ``quiz@hull`` component inside the main HTML page.
 
-        <!-- Quiz Widget -->
-        <div data-hull-widget="quiz@hull" data-hull-id="512383795ef8755c63000001"></div>
+        <!-- Quiz Component -->
+        <div data-hull-component="games/quiz@hull" data-hull-id="512383795ef8755c63000001"></div>
 
 4. We want to show a logo instead of the name of the brand in each answer. To do this, override the original ``quiz_answer`` template.
 
-    In order to do that we added the file ``quiz_answer.hbs`` in ``app/widgets/quiz/`` and we wrote the following code inside.
+    In order to do that we added the file ``quiz_answer.hbs`` in ``app/aura_components/quiz/`` and we wrote the following code inside.
 
         <img src="images/icons/{{description}}">
 
 5. As you may notice in the demo, we change the background-color at each question.
 
-    For this, we create a widget called ``background``. Find it in ``app/widgets/background``.
+    For this, we create a component called ``background``. Find it in ``app/aura_components/background``.
 
-    This widget listens to all events from the quiz to set the proper background color.
+    This component listens to all events from the quiz to set the proper background color.
 
 6. Do a bit of CSS to have an effective design.
 
@@ -103,3 +103,6 @@ Deploy your app to heroku:
     git subtree push --prefix dist heroku master
     open http://your_amazing_app.herokuapp.com
 
+Deploy to github pages:
+
+    grunt gh-pages 

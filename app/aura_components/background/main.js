@@ -1,8 +1,8 @@
-// This widget listens to all events from the quiz
+// This component listens to all events from the quiz
 // to set the proper background color
 
 /*global Hull:true */
-Hull.widget("background", {
+Hull.component({
   templates: [ 'main' ],
   initialize: function() {
     var $body = $('body');

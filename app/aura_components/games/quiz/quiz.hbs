@@ -1,0 +1,84 @@
+
+{{#if playing}}
+
+  <div data-hull-section="intro" class='text-center hidden'>
+    <div class="hull-quiz hull-quiz--intro">
+      <div class="hull-quiz__header">
+        <h1 class="hull-quiz__title">{{quiz.name}}</h1>
+        <p class="hull-quiz__description">{{quiz.description}}</p>
+      </div>
+    </div>
+    <div class="hull-pager">
+      <div class="hull-pager__content">
+        {{#if readyToPlay}}
+          <button data-hull-action="start" class="hull-btn">Start</button>
+        {{else}}
+          <div data-hull-component='login/profile@hull' data-hull-provider='twitter'></div>
+        {{/if}}
+      </div>
+    </div>
+  </div>
+
+  <div data-hull-section="questions" class='hull-quiz hull-quiz__question'>
+    <div class="hull-quiz__current__header">
+      <h4 class="hull-quiz__current__title">
+        <strong>Question {{current}} </strong> <span>of {{questions.length}}</span>
+      </h4>
+    </div>
+    {{#questions}}
+      <div data-hull-question="{{ref}}" class="hidden hull-quiz__current">
+        <h4 class="hull-quiz__question__name">{{name}}</h4>
+        <h5 class="hull-quiz__question__description">{{description}}</h5>
+        <ol class="hull-quiz__question__anwsers">
+          {{#answers}}
+            <li>
+              <div data-hull-action="answer" data-hull-answer-ref="{{ref}}" data-hull-question-ref="{{question_ref}}">
+                <img src="images/icons/{{description}}">
+              </div>
+            </li>
+          {{/answers}}
+        </ol>
+      </div>
+    {{/questions}}
+    <div class="hull-pager">
+      <div class="hull-pager__content">
+        {{#if previous}}
+          <button data-hull-action="previous" class="hull-btn">Previous</button>
+        {{/if}}
+
+        {{#if next}}
+          <button data-hull-action="next" class="hull-btn">Next</button>
+        {{else}}
+          <button data-hull-action="submit" class="hull-btn">Submit</button>
+        {{/if}}
+      </div>
+    </div>
+  </div>
+
+  <div data-hull-section="finished" class='text-center hidden'>
+    <h3>Done, now submit your stuff... !</h3>
+    {{#if loggedIn}}
+      <a class='btn btn-block btn-primary' data-hull-action='submit'>Submit !</a>
+    {{else}}
+      <div data-hull-component='login/profile@hull' data-hull-provider='twitter'></div>
+    {{/if}}
+
+  </div>
+
+  <hr>
+
+
+{{else}}
+
+  {{#badge}}
+  <div class="text-center">
+    <h3>Bravo !</h3>
+    <h1>{{data.score}} points <small class='muted'>after {{stats.attempts}} attempts</small></h1>
+    <p>
+      <a class="btn btn-primary" data-hull-action='replay'>Replay !</a>
+      <a class="btn btn-danger" data-hull-action='replay' data-hull-reset='true'>Reset !</a>
+    </p>
+  </div>
+  {{/badge}}
+
+{{/if}}
