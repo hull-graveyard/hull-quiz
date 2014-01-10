@@ -14,31 +14,34 @@
     <link rel="icon" type="image/png" href="images/favicon.png" />
 
     <link rel="stylesheet" href="//hullstrap.s3.amazonaws.com/stylesheets/hullstrap.css">
+
+    <!-- build:css admin.css -->
     <link rel="stylesheet" href="./styles/admin.css">
-
-
     <!-- endbuild -->
-  </head>
-  <body class="">
-    <div class="container">
-      <div class="page-header">
-        <h1 class="text-center">Quiz admin</h1>
-      </div>
-      <div class="admin-wrapper">
-        <div data-hull-widget="admin/quiz@hull"></div>
-      </div>
-    </div>
 
-    <div data-hull-widget="footer@hull"></div>    
-
+    <script src="https://dc8na2hxrj29i.cloudfront.net/code/keen-2.1.0-min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
-
-    <script src="https://d3f5pyioow99x0.cloudfront.net/develop/hull.js"></script>
+    <script src="https://d3f5pyioow99x0.cloudfront.net/0.7.12/hull.js"></script>
 
     <!-- build:js application.js -->
-    <script src="scripts/hull-init.js"></script>
-    <script src="scripts/templates.js"></script>
-    <script src="scripts/widgets.js"></script>
+    <script src="./scripts/hull-init.js"></script>
+    <script src="./scripts/templates.js"></script>
+    <script src="./scripts/aura_components.js"></script>
     <!-- endbuild -->
+
+  </head>
+  <body>
+    <div data-hull-component="router@admin"></div>
+    <div class="container-fluid main">
+      <div class="row-fluid">
+        <span class="span3 panel left">
+          <div data-hull-component="left@admin"></div>
+        </span>
+        <span class="span9 panel">
+          <div data-hull-component="main@admin"></div>
+        </span>
+      </div>
+    </div>
+    <div data-hull-component="footer@hull"></div>    
   </body>
 </html>

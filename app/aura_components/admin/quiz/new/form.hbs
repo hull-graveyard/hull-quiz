@@ -1,0 +1,101 @@
+<div class="page-header">
+  {{#unless quiz.isNew}}
+    <div class="pull-right">
+      <a class="btn" data-hull-action="duplicateQuiz">
+        Duplicate quiz
+      </a>
+
+      <a class="btn btn-danger" data-hull-action="deleteQuiz">
+        <i class="icon-trash"></i>
+        Delete quiz
+      </a>
+    </div>
+  {{/unless}}
+  <h2>
+  {{#if quiz.isNew}}
+    New Quiz
+  {{else}}
+    {{quiz.name}}
+  {{/if}}
+  </h2>
+</div>
+
+{{#if embedCode}}
+  <h6>Embed code</h6>
+  <pre class="code">{{embedCode}}</pre>
+  <hr />
+{{/if}}
+
+{{#quiz}}
+
+<form class="form js-hull-quiz-form">
+  <fieldset>
+    <label for="name">Name</label>
+    <input type="text" class="input-block-level" name="name" value="{{name}}" placeholder="Name" required="true">
+    <label for="description">Description</label>
+    <textarea class="input-block-level" name="description" placeholder="Description for the quiz (optional)">{{description}}</textarea>
+  </fieldset>
+
+  <ul class="unstyled">
+  {{#each questions}}
+  <li>
+    <hr />
+
+    <h3>
+      <span class="pull-right">
+        <a class="btn btn-danger" data-hull-action="deleteQuestion" data-hull-question-index="{{@index}}">
+          <i class="icon-trash"></i>
+          Delete question
+        </a>
+      </span>
+
+      Question {{index}}
+    </h3>
+
+    <input type="hidden" class="input-block-level" name="questions[{{@index}}][ref]" value="{{ref}}">
+    <label for="questions[{{@index}}][name]">Name</label>
+    <input type="text" class="input-block-level" name="questions[{{@index}}][name]" value="{{name}}" placeholder="Type a Question..." required="true">
+    <label for="questions[{{@index}}][description]">Description</label>
+    <input type="text" class="input-block-level"
+    name="questions[{{@index}}][description]" value="{{description}}" placeholder="Description for the question (optional)" required="true">
+    <h5>Answers</h5>
+
+    <ul class="unstyled">
+    {{#each answers}}
+      <li class="form-inline">
+        <p>
+          <input type="hidden" name="questions[{{questionIndex}}][answers][{{@index}}][questionIndex]" value="{{questionIndex}}">
+          <input type="hidden" name="questions[{{questionIndex}}][answers][{{@index}}][ref]" value="{{ref}}">
+
+          <input type="text" class="input-xxlarge" name="questions[{{questionIndex}}][answers][{{@index}}][name]" value="{{name}}" placeholder="Type an Answer..." required="true">
+          <input type="text" class="input-small" name="questions[{{questionIndex}}][answers][{{@index}}][weight]" value="{{weight}}" placeholder="Points" required="true" pattern="\d*">
+          <a class="btn btn-danger" data-hull-action="deleteAnswer" data-hull-question-index="{{questionIndex}}" data-hull-answer-index="{{@index}}">
+            <i class="icon-trash"></i>
+          </a>
+        </p>
+      </li>
+    {{/each}}
+      <li>
+        <a data-hull-action="addAnswer" data-hull-question-index="{{@index}}" class="btn">
+          <i class="icon-plus"></i>
+          Add an Answer
+        </a>
+      </li>
+    </ul>
+  </li>
+  {{/each}}
+</ul>
+
+<hr />
+
+<a data-hull-action="addQuestion" class="btn">
+  <i class="icon-plus"></i>
+  Add a Question
+</a>
+
+<hr />
+
+<input type="submit" value="{{#if isNew}}Create{{else}}Save{{/if}}" class="btn btn-large btn-primary btn-block" />
+
+</form>
+{{/quiz}}

@@ -1,4 +1,51 @@
-textarea{
-  width:100%;
-  box-sizing:border-box;
+.navbar {
+  margin-bottom: 0;
+}
+
+.btn.new-quiz {
+  border-radius: 50%;
+}
+
+.container-fluid.main {
+  padding:0;
+  min-height: 100%;
+  display: flex;
+  margin-top: -56px; //navbar height
+}
+.container-fluid.main > .row-fluid {
+  display: flex;
+  padding-top: 56px; //compensate margin-top for .container-fluid.main
+  height: 100%;
+}
+.container-fluid.main > .row-fluid > .panel {
+  padding: 22px;
+}
+body {
+  padding-top: 56px;
+}
+.panel.left {
+  background-color: #EEE;
+  border-right: 1px solid lightgray;
+  position: fixed;
+  overflow: auto;
+  top: 56px;
+  bottom: 0;
+  width: 337px;
+}
+
+.span9.panel {
+  margin-left: 357px;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+[data-hull-component*="keen/number"] {
+  height: 300px;
+  display: table-cell;
+  vertical-align: middle;
 }
