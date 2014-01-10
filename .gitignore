@@ -5,3 +5,5 @@ npm-debug.log
 /lib
 /tmp
 /dist
+
+/bower_components/
