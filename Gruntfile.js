@@ -108,15 +108,6 @@ module.exports = function (grunt) {
       }
     },
 
-    useminPrepare: {
-      html: 'index.html'
-    },
-
-    usemin: {
-      html: ['dist/*.html'],
-      css: ['dist/styles/*.css']
-    },
-
     imagemin: {
       dist: {
         files: [{
@@ -132,8 +123,12 @@ module.exports = function (grunt) {
       dist: {
         files: {
           'dist/application.css': [
-            'app/styles/*.css'
-          ]
+            'app/styles/normalize.css',
+            'app/styles/main.css'
+          ],
+          'dist/admin.css': [
+            'app/styles/admin.css'
+          ],
         }
       }
     },
@@ -203,13 +198,11 @@ module.exports = function (grunt) {
     // 'concat',
     'jshint',
     'handlebars',
-    'useminPrepare',
 
     'uglify',
     'imagemin',
     'htmlmin',
     'cssmin',
-    'usemin',
     'copy'
   ]);
 
