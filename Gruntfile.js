@@ -120,7 +120,7 @@ module.exports = function (grunt) {
     },
 
     cssmin: {
-      dist: {
+      combine: {
         files: {
           'dist/application.css': [
             'app/styles/normalize.css',
@@ -166,7 +166,7 @@ module.exports = function (grunt) {
 
     'gh-pages': {
       options: {
-        base: 'app'
+        base: 'dist'
       },
       src: ['**']
     }
@@ -175,9 +175,8 @@ module.exports = function (grunt) {
   });
 
   grunt.renameTask('regarde', 'watch');
-  grunt.renameTask('mincss', 'cssmin');
 
-  // grunt.loadNpmTasks('grunt-gh-pages');
+  grunt.loadNpmTasks('grunt-gh-pages');
 
   grunt.registerTask('server', [
     'clean:server',

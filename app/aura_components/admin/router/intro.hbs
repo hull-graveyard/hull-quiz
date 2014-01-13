@@ -1,12 +1,14 @@
-<div class="navbar">
+<div class="navbar navbar-fixed-top">
   <div class="navbar-inner">
-    <a class="brand" href="#">Quiz admin</a>
-    <ul class="nav">
-      {{#if isAdmin}}
-      <li><a href="#users">Users</a></li>
-      <li><a href="#quiz">Quizz</a></li>
-      <li><a href="#stats">Stats</a></li>
-      {{/if}}
-    </ul>
+    <div class="container-fluid">
+      <a class="brand" href="#">Quiz admin</a>
+      <ul class="nav">
+        {{#if isAdmin}}
+        <li><a href="#users">Users</a></li>
+        <li><a href="#quiz">Quizz</a></li>
+        <li><a href="#stats">Stats</a></li>
+        {{/if}}
+      </ul>
+    </div>
   </div>
 </div>
