@@ -27,14 +27,6 @@ module.exports = function (grunt) {
 
     // default watch configuration
     watch: {
-      aura_components: {
-        files: ['app/aura_components/**/*.js'],
-        tasks: ['concat']
-      },
-      handlebars: {
-        files: ['app/aura_components/**/*.hbs'],
-        tasks: ['handlebars']
-      },
       livereload: {
         files: [
           'app/*.html',
@@ -43,6 +35,14 @@ module.exports = function (grunt) {
           'app/images/*.{png,jpg,jpeg}'
         ],
         tasks: ['livereload']
+      },
+      // components: {
+      //   files: ['app/aura_components/**/*.js'],
+      //   tasks: ['concat']
+      // },
+      templates: {
+        files: ['app/aura_components/**/*.hbs'],
+        tasks: ['handlebars']
       }
     },
 
@@ -52,6 +52,16 @@ module.exports = function (grunt) {
         'app/aura_components/**/*.js'
       ]
     },
+
+    // concat: {
+    //   options: {
+    //     separator: "\n\n\n\n//--------\n\n\n"
+    //   },
+    //   dist: {
+    //     src: ['app/aura_components/**/*.js'],
+    //     dest: 'app/scripts/aura_components.js'
+    //   }
+    // },
 
     handlebars: {
       compile: {
@@ -87,6 +97,7 @@ module.exports = function (grunt) {
       dist: ['.tmp', 'dist/*'],
       server: '.tmp'
     },
+
     uglify: {
       dist: {
         files: {
@@ -96,13 +107,16 @@ module.exports = function (grunt) {
         }
       }
     },
+
     useminPrepare: {
       html: 'index.html'
     },
+
     usemin: {
       html: ['dist/*.html'],
       css: ['dist/styles/*.css']
     },
+
     imagemin: {
       dist: {
         files: [{
@@ -113,12 +127,11 @@ module.exports = function (grunt) {
         }]
       }
     },
+
     cssmin: {
       dist: {
         files: {
           'dist/application.css': [
-            'app/components/ratchet/dist/ratchet.css',
-            'app/components/font-awesome/css/font-awesome.css',
             'app/styles/*.css'
           ]
         }
@@ -129,14 +142,7 @@ module.exports = function (grunt) {
       dist: {
         files: [
           { dest: 'dist/index.php', src: 'dist/index.html' },
-          { cwd: 'app/', dest: 'dist/', src: ['.htaccess', 'robots.txt'], expand: true },
-          {
-            cwd: 'app/components/font-awesome/font/',
-            dest: 'dist/font/',
-            filter: 'isFile',
-            src: '*',
-            expand: true
-          }
+          { cwd: 'app/', dest: 'dist/', src: ['.htaccess', 'robots.txt'], expand: true }
         ]
       }
     },
@@ -163,16 +169,6 @@ module.exports = function (grunt) {
       }
     },
 
-    concat: {
-      options: {
-        separator: "\n\n\n\n//--------\n\n\n"
-      },
-      dist: {
-        src: ['app/aura_components/**/*.js'],
-        dest: 'app/scripts/aura_components.js'
-      }
-    },
-
     'gh-pages': {
       options: {
         base: 'app'
@@ -184,7 +180,6 @@ module.exports = function (grunt) {
   });
 
   grunt.renameTask('regarde', 'watch');
-
   grunt.renameTask('mincss', 'cssmin');
 
   // grunt.loadNpmTasks('grunt-gh-pages');
@@ -205,7 +200,7 @@ module.exports = function (grunt) {
 
   grunt.registerTask('build', [
     'clean:dist',
-    'concat',
+    // 'concat',
     'jshint',
     'handlebars',
     'useminPrepare',

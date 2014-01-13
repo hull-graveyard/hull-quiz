@@ -1,51 +1,53 @@
 .navbar {
   margin-bottom: 0;
+  z-index: 100;
 }
 
 .btn.new-quiz {
   border-radius: 50%;
 }
 
-.container-fluid.main {
-  padding:0;
-  min-height: 100%;
-  display: flex;
-  margin-top: -56px; //navbar height
+.main {
+  padding:20px;
+  padding-top:55px;
+  margin-left: 26%;
 }
-.container-fluid.main > .row-fluid {
-  display: flex;
-  padding-top: 56px; //compensate margin-top for .container-fluid.main
-  height: 100%;
-}
-.container-fluid.main > .row-fluid > .panel {
-  padding: 22px;
-}
-body {
-  padding-top: 56px;
-}
-.panel.left {
-  background-color: #EEE;
-  border-right: 1px solid lightgray;
-  position: fixed;
-  overflow: auto;
-  top: 56px;
+
+.panel.left{
+  position:fixed;
+  left: 22px;
+  overflow: scroll;
   bottom: 0;
-  width: 337px;
+  top:56px;
+}
+.panel.right{
+  margin-left: 34%;
+}
+.panel {
+  padding-top: 22px;
+  box-sizing:border-box;
+  -webkit-box-sizing:border-box;
 }
 
-.span9.panel {
-  margin-left: 357px;
-}
-
+/*
 .navbar {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-}
+}*/
 
 [data-hull-component*="keen/number"] {
   height: 300px;
   display: table-cell;
   vertical-align: middle;
+}
+
+h1:first-child,
+h2:first-child,
+h3:first-child,
+h4:first-child,
+h5:first-child,
+h6:first-child{
+  margin-top: 0;
 }
