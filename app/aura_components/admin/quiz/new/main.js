@@ -32,7 +32,7 @@ Hull.component({
       var Model = this.sandbox.mvc.Model;
 
       var quiz;
-      if (action.data.quizId != null) {
+      if (action.data.quizId !== null) {
         quiz = this.data.achievements.get(action.data.quizId);
       } else {
         quiz = new Model();

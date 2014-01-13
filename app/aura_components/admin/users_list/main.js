@@ -44,7 +44,7 @@ Hull.component({
     data.currentQuery = this.currentQuery;
 
     data.filters = {
-      All: { action: 'resetFilter', isActive: this.query.approved == null },
+      All: { action: 'resetFilter', isActive: this.query.approved === null },
       Approved: { action: 'filterApproved', isActive: this.query.approved === true },
       Unapproved: { action: 'filterUnapproved', isActive: this.query.approved === false }
     };

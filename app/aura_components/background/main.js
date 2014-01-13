@@ -2,10 +2,10 @@
 // to set the proper background color
 
 /*global Hull:true , $:true*/
-'use strict';
 Hull.component({
   templates: [ 'main' ],
   initialize: function() {
+    'use strict';
     var $body = $('body');
     this.sandbox.on('hull.quiz.**', function(data){
       if(data.current){

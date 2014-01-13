@@ -1,3 +1,4 @@
+/*global window:true */
 Hull.component({
 
   defaultPanel: "users",
@@ -5,8 +6,8 @@ Hull.component({
   templates: ['empty', 'not_admin', 'intro', 'users', 'new_quiz', 'stats'],
   refreshEvents: ['model.hull.me.change'],
   initialize: function () {
-    this.firstRun = true;
     "use strict";
+    this.firstRun = true;
     this.sandbox.on('hull.quiz.admin.view', function (quizId) {
       var current = window.location.hash;
       if (current === '#stats') {

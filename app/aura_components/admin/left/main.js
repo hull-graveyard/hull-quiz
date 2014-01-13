@@ -2,7 +2,7 @@ Hull.component({
   templates: ['empty', 'users', 'quiz', 'stats'],
   refreshEvents: ['model.hull.me.change'],
   events: {
-    'click .new-quiz': '_toNewQuiz',
+    'click .new-quiz': '_toNewQuiz'
   },
   initialize: function () {
     this.sandbox.on('hull.quiz.admin.section.*', function (name) {

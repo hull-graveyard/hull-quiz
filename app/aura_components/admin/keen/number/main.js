@@ -50,7 +50,7 @@ Hull.component({
       var metric = new Keen.Metric(data.options.eventCollection, filters);
       var conf = {};
       if (data.options.label) {
-        conf.label = data.options.label
+        conf.label = data.options.label;
       }
       metric.draw(self.$el[0], conf);
     });
