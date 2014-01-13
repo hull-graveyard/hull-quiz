@@ -25,7 +25,7 @@ Hull.component({
   },
 
   datasources: {
-    users: 'users'
+    users: 'users',
     app: 'app'
   },
 
