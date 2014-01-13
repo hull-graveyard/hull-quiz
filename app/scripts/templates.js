@@ -10,23 +10,17 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
   return " \n";
   };
 
-this["Hull"]["templates"]["games/quiz/answer"] = function (Handlebars,depth0,helpers,partials,data,depth1) {
+this["Hull"]["templates"]["games/quiz/answer"] = function (Handlebars,depth0,helpers,partials,data) {
   this.compilerInfo = [4,'>= 1.0.0'];
 helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
-  var buffer = "", stack1, stack2, functionType="function", escapeExpression=this.escapeExpression;
+  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression;
 
 
-  buffer += "<li>\n  <div class=\"hull-btn\" data-hull-action=\"answerAndNext\" data-hull-answer-id=\"";
-  if (stack1 = helpers.id) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.id; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += "<img src=\"images/icons/";
+  if (stack1 = helpers.description) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.description; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
-    + "\" data-hull-question-id=\""
-    + escapeExpression(((stack1 = depth1.id),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
-    + "\">\n    <img src=\"images/icons/";
-  if (stack2 = helpers.description) { stack2 = stack2.call(depth0, {hash:{},data:data}); }
-  else { stack2 = depth0.description; stack2 = typeof stack2 === functionType ? stack2.apply(depth0) : stack2; }
-  buffer += escapeExpression(stack2)
-    + "\">\n  </div>\n</li>\n";
+    + "\">\n";
   return buffer;
   };
 
@@ -42,7 +36,7 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
 this["Hull"]["templates"]["games/quiz/intro"] = function (Handlebars,depth0,helpers,partials,data) {
   this.compilerInfo = [4,'>= 1.0.0'];
 helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
-  var buffer = "", stack1, stack2, options, helperMissing=helpers.helperMissing, escapeExpression=this.escapeExpression, functionType="function", self=this;
+  var buffer = "", stack1, stack2, functionType="function", escapeExpression=this.escapeExpression, self=this;
 
 function program1(depth0,data) {
   
@@ -53,16 +47,10 @@ function program1(depth0,data) {
 function program3(depth0,data) {
   
   
-  return "\n          <div data-hull-component=\"login/profile@hull\"></div>\n      ";
+  return "\n          <div data-hull-widget=\"login/profile@hull\"></div>\n      ";
   }
 
-  buffer += "<div class=\"hull-quiz hull-quiz--intro\">\n";
-  options = {hash:{},data:data};
-  buffer += escapeExpression(((stack1 = helpers.json || depth0.json),stack1 ? stack1.call(depth0, depth0.quiz, options) : helperMissing.call(depth0, "json", depth0.quiz, options)))
-    + "\n";
-  options = {hash:{},data:data};
-  buffer += escapeExpression(((stack1 = helpers.json || depth0.json),stack1 ? stack1.call(depth0, depth0.me, options) : helperMissing.call(depth0, "json", depth0.me, options)))
-    + "\n  <div class=\"hull-quiz__header\">\n    <h1 class=\"hull-quiz__title\">"
+  buffer += "<div class=\"hull-quiz hull-quiz--intro\">\n  <div class=\"hull-quiz__header\">\n    <h1 class=\"hull-quiz__title\">"
     + escapeExpression(((stack1 = ((stack1 = depth0.quiz),stack1 == null || stack1 === false ? stack1 : stack1.name)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
     + "</h1>\n    <p class=\"hull-quiz__description\">"
     + escapeExpression(((stack1 = ((stack1 = depth0.quiz),stack1 == null || stack1 === false ? stack1 : stack1.description)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
@@ -76,7 +64,7 @@ function program3(depth0,data) {
 this["Hull"]["templates"]["games/quiz/question"] = function (Handlebars,depth0,helpers,partials,data) {
   this.compilerInfo = [4,'>= 1.0.0'];
 helpers = this.merge(helpers, Handlebars.helpers); partials = this.merge(partials, Handlebars.partials); data = data || {};
-  var buffer = "", stack1, stack2, options, self=this, functionType="function", escapeExpression=this.escapeExpression, blockHelperMissing=helpers.blockHelperMissing;
+  var buffer = "", stack1, stack2, options, functionType="function", escapeExpression=this.escapeExpression, self=this, blockHelperMissing=helpers.blockHelperMissing;
 
 function program1(depth0,data) {
   
@@ -107,12 +95,8 @@ function program2(depth0,data) {
   if (stack1 = helpers.description) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = depth0.description; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
-    + "</h5>\n          ";
-  if (stack1 = helpers.id) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.id; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "\n          <ol class=\"hull-quiz__question__anwsers\">\n              ";
-  options = {hash:{},inverse:self.noop,fn:self.program(3, program3, data),data:data};
+    + "</h5>\n          <ol class=\"hull-quiz__question__anwsers\">\n              ";
+  options = {hash:{},inverse:self.noop,fn:self.programWithDepth(3, program3, data, depth0),data:data};
   if (stack1 = helpers.answers) { stack1 = stack1.call(depth0, options); }
   else { stack1 = depth0.answers; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   if (!helpers.answers) { stack1 = blockHelperMissing.call(depth0, stack1, options); }
@@ -120,13 +104,19 @@ function program2(depth0,data) {
   buffer += "\n          </ol>\n        ";
   return buffer;
   }
-function program3(depth0,data) {
+function program3(depth0,data,depth1) {
   
-  var buffer = "", stack1;
-  buffer += "\n                ";
-  stack1 = self.invokePartial(partials['games/quiz/answer'], 'games/quiz/answer', depth0, helpers, partials, data);
-  if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "\n              ";
+  var buffer = "", stack1, stack2;
+  buffer += "\n              <li>\n                <div class=\"hull-btn\" data-hull-action=\"answerAndNext\"\n                    data-hull-answer-id=\"";
+  if (stack1 = helpers.id) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.id; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"\n                    data-hull-question-id=\""
+    + escapeExpression(((stack1 = depth1.id),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "\">\n                ";
+  stack2 = self.invokePartial(partials['games/quiz/answer'], 'games/quiz/answer', depth0, helpers, partials, data);
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n                </div>\n              </li>\n              ";
   return buffer;
   }
 
@@ -148,11 +138,7 @@ function program9(depth0,data) {
   return "\n            <button data-hull-action=\"submit\" class=\"hull-btn\">Submit</button>\n          ";
   }
 
-  buffer += "<div class=\"hull-quiz hull-quiz__question\">\n";
-  if (stack1 = helpers.quiz) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.quiz; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "\n  <div class=\"hull-quiz__header\">\n    <h1 class=\"hull-quiz__title\">"
+  buffer += "<div class=\"hull-quiz hull-quiz__question\">\n\n  <div class=\"hull-quiz__header\">\n    <h1 class=\"hull-quiz__title\">"
     + escapeExpression(((stack1 = ((stack1 = depth0.quiz),stack1 == null || stack1 === false ? stack1 : stack1.name)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
     + "</h1>\n    <p class=\"hull-quiz__description\">"
     + escapeExpression(((stack1 = ((stack1 = depth0.quiz),stack1 == null || stack1 === false ? stack1 : stack1.description)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
@@ -169,160 +155,6 @@ function program9(depth0,data) {
   if (!helpers.current) { stack2 = blockHelperMissing.call(depth0, stack2, options); }
   if(stack2 || stack2 === 0) { buffer += stack2; }
   buffer += "\n  </div>\n</div>\n";
-  return buffer;
-  };
-
-this["Hull"]["templates"]["games/quiz/quiz"] = function (Handlebars,depth0,helpers,partials,data) {
-  this.compilerInfo = [4,'>= 1.0.0'];
-helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
-  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression, self=this, blockHelperMissing=helpers.blockHelperMissing;
-
-function program1(depth0,data) {
-  
-  var buffer = "", stack1, stack2, options;
-  buffer += "\n\n  <div data-hull-section=\"intro\" class='text-center hidden'>\n    <div class=\"hull-quiz hull-quiz--intro\">\n      <div class=\"hull-quiz__header\">\n        <h1 class=\"hull-quiz__title\">"
-    + escapeExpression(((stack1 = ((stack1 = depth0.quiz),stack1 == null || stack1 === false ? stack1 : stack1.name)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
-    + "</h1>\n        <p class=\"hull-quiz__description\">"
-    + escapeExpression(((stack1 = ((stack1 = depth0.quiz),stack1 == null || stack1 === false ? stack1 : stack1.description)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
-    + "</p>\n      </div>\n    </div>\n    <div class=\"hull-pager\">\n      <div class=\"hull-pager__content\">\n        ";
-  stack2 = helpers['if'].call(depth0, depth0.readyToPlay, {hash:{},inverse:self.program(4, program4, data),fn:self.program(2, program2, data),data:data});
-  if(stack2 || stack2 === 0) { buffer += stack2; }
-  buffer += "\n      </div>\n    </div>\n  </div>\n\n  <div data-hull-section=\"questions\" class='hull-quiz hull-quiz__question'>\n    <div class=\"hull-quiz__current__header\">\n      <h4 class=\"hull-quiz__current__title\">\n        <strong>Question ";
-  if (stack2 = helpers.current) { stack2 = stack2.call(depth0, {hash:{},data:data}); }
-  else { stack2 = depth0.current; stack2 = typeof stack2 === functionType ? stack2.apply(depth0) : stack2; }
-  buffer += escapeExpression(stack2)
-    + " </strong> <span>of "
-    + escapeExpression(((stack1 = ((stack1 = depth0.questions),stack1 == null || stack1 === false ? stack1 : stack1.length)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
-    + "</span>\n      </h4>\n    </div>\n    ";
-  options = {hash:{},inverse:self.noop,fn:self.program(6, program6, data),data:data};
-  if (stack2 = helpers.questions) { stack2 = stack2.call(depth0, options); }
-  else { stack2 = depth0.questions; stack2 = typeof stack2 === functionType ? stack2.apply(depth0) : stack2; }
-  if (!helpers.questions) { stack2 = blockHelperMissing.call(depth0, stack2, options); }
-  if(stack2 || stack2 === 0) { buffer += stack2; }
-  buffer += "\n    <div class=\"hull-pager\">\n      <div class=\"hull-pager__content\">\n        ";
-  stack2 = helpers['if'].call(depth0, depth0.previous, {hash:{},inverse:self.noop,fn:self.program(9, program9, data),data:data});
-  if(stack2 || stack2 === 0) { buffer += stack2; }
-  buffer += "\n\n        ";
-  stack2 = helpers['if'].call(depth0, depth0.next, {hash:{},inverse:self.program(13, program13, data),fn:self.program(11, program11, data),data:data});
-  if(stack2 || stack2 === 0) { buffer += stack2; }
-  buffer += "\n      </div>\n    </div>\n  </div>\n\n  <div data-hull-section=\"finished\" class='text-center hidden'>\n    <h3>Done, now submit your stuff... !</h3>\n    ";
-  stack2 = helpers['if'].call(depth0, depth0.loggedIn, {hash:{},inverse:self.program(17, program17, data),fn:self.program(15, program15, data),data:data});
-  if(stack2 || stack2 === 0) { buffer += stack2; }
-  buffer += "\n\n  </div>\n\n  <hr>\n\n\n";
-  return buffer;
-  }
-function program2(depth0,data) {
-  
-  
-  return "\n          <button data-hull-action=\"start\" class=\"hull-btn\">Start</button>\n        ";
-  }
-
-function program4(depth0,data) {
-  
-  
-  return "\n          <div data-hull-component='login/profile@hull' data-hull-provider='twitter'></div>\n        ";
-  }
-
-function program6(depth0,data) {
-  
-  var buffer = "", stack1, options;
-  buffer += "\n      <div data-hull-question=\"";
-  if (stack1 = helpers.ref) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.ref; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "\" class=\"hidden hull-quiz__current\">\n        <h4 class=\"hull-quiz__question__name\">";
-  if (stack1 = helpers.name) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.name; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "</h4>\n        <h5 class=\"hull-quiz__question__description\">";
-  if (stack1 = helpers.description) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.description; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "</h5>\n        <ol class=\"hull-quiz__question__anwsers\">\n          ";
-  options = {hash:{},inverse:self.noop,fn:self.program(7, program7, data),data:data};
-  if (stack1 = helpers.answers) { stack1 = stack1.call(depth0, options); }
-  else { stack1 = depth0.answers; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  if (!helpers.answers) { stack1 = blockHelperMissing.call(depth0, stack1, options); }
-  if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "\n        </ol>\n      </div>\n    ";
-  return buffer;
-  }
-function program7(depth0,data) {
-  
-  var buffer = "", stack1;
-  buffer += "\n            <li>\n              <div data-hull-action=\"answer\" data-hull-answer-ref=\"";
-  if (stack1 = helpers.ref) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.ref; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "\" data-hull-question-ref=\"";
-  if (stack1 = helpers.question_ref) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.question_ref; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "\">\n                <img src=\"images/icons/";
-  if (stack1 = helpers.description) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.description; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "\">\n              </div>\n            </li>\n          ";
-  return buffer;
-  }
-
-function program9(depth0,data) {
-  
-  
-  return "\n          <button data-hull-action=\"previous\" class=\"hull-btn\">Previous</button>\n        ";
-  }
-
-function program11(depth0,data) {
-  
-  
-  return "\n          <button data-hull-action=\"next\" class=\"hull-btn\">Next</button>\n        ";
-  }
-
-function program13(depth0,data) {
-  
-  
-  return "\n          <button data-hull-action=\"submit\" class=\"hull-btn\">Submit</button>\n        ";
-  }
-
-function program15(depth0,data) {
-  
-  
-  return "\n      <a class='btn btn-block btn-primary' data-hull-action='submit'>Submit !</a>\n    ";
-  }
-
-function program17(depth0,data) {
-  
-  
-  return "\n      <div data-hull-component='login/profile@hull' data-hull-provider='twitter'></div>\n    ";
-  }
-
-function program19(depth0,data) {
-  
-  var buffer = "", stack1, options;
-  buffer += "\n\n  ";
-  options = {hash:{},inverse:self.noop,fn:self.program(20, program20, data),data:data};
-  if (stack1 = helpers.badge) { stack1 = stack1.call(depth0, options); }
-  else { stack1 = depth0.badge; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  if (!helpers.badge) { stack1 = blockHelperMissing.call(depth0, stack1, options); }
-  if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "\n\n";
-  return buffer;
-  }
-function program20(depth0,data) {
-  
-  var buffer = "", stack1;
-  buffer += "\n  <div class=\"text-center\">\n    <h3>Bravo !</h3>\n    <h1>"
-    + escapeExpression(((stack1 = ((stack1 = depth0.data),stack1 == null || stack1 === false ? stack1 : stack1.score)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
-    + " points <small class='muted'>after "
-    + escapeExpression(((stack1 = ((stack1 = depth0.stats),stack1 == null || stack1 === false ? stack1 : stack1.attempts)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
-    + " attempts</small></h1>\n    <p>\n      <a class=\"btn btn-primary\" data-hull-action='replay'>Replay !</a>\n      <a class=\"btn btn-danger\" data-hull-action='replay' data-hull-reset='true'>Reset !</a>\n    </p>\n  </div>\n  ";
-  return buffer;
-  }
-
-  buffer += "\n";
-  stack1 = helpers['if'].call(depth0, depth0.playing, {hash:{},inverse:self.program(19, program19, data),fn:self.program(1, program1, data),data:data});
-  if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "\n";
   return buffer;
   };
 

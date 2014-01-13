@@ -1,5 +1,5 @@
 <div class="hull-quiz hull-quiz__question">
-{{quiz}}
+
   <div class="hull-quiz__header">
     <h1 class="hull-quiz__title">{{quiz.name}}</h1>
     <p class="hull-quiz__description">{{quiz.description}}</p>
@@ -16,10 +16,15 @@
         {{#question}}
           <h4 class="hull-quiz__question__name">{{name}}</h4>
           <h5 class="hull-quiz__question__description">{{description}}</h5>
-          {{id}}
           <ol class="hull-quiz__question__anwsers">
               {{#answers}}
+              <li>
+                <div class="hull-btn" data-hull-action="answerAndNext"
+                    data-hull-answer-id="{{id}}"
+                    data-hull-question-id="{{../id}}">
                 {{> games/quiz/answer}}
+                </div>
+              </li>
               {{/answers}}
           </ol>
         {{/question}}

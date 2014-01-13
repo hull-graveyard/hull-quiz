@@ -1,12 +1,12 @@
 // This component listens to all events from the quiz
 // to set the proper background color
 
-/*global Hull:true */
+/*global Hull:true , $:true*/
+'use strict';
 Hull.component({
   templates: [ 'main' ],
   initialize: function() {
     var $body = $('body');
-
     this.sandbox.on('hull.quiz.**', function(data){
       if(data.current){
         // Change background color

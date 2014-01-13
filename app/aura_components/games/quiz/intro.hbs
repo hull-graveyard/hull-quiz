@@ -1,6 +1,4 @@
 <div class="hull-quiz hull-quiz--intro">
-{{json quiz}}
-{{json me}}
   <div class="hull-quiz__header">
     <h1 class="hull-quiz__title">{{quiz.name}}</h1>
     <p class="hull-quiz__description">{{quiz.description}}</p>
@@ -11,7 +9,7 @@
       {{#if loggedIn}}
         <button data-hull-action="start" class="hull-btn">Start</button>
       {{else}}
-          <div data-hull-component="login/profile@hull"></div>
+          <div data-hull-widget="login/profile@hull"></div>
       {{/if}}
     </div>
   </div>

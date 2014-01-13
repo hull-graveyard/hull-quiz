@@ -22,11 +22,19 @@
     <script src="https://d3f5pyioow99x0.cloudfront.net/0.7.12/hull.js"></script>
 
     <!-- build:js application.js -->
-    <script src="./scripts/hull-init.js"></script>
     <script src="./scripts/templates.js"></script>
-    <script src="./scripts/aura_components.js"></script>
     <!-- endbuild -->
 
+    <script type="text/javascript">
+        Hull.init({
+          appId: "512633779e3903afd4000020",
+          orgUrl: 'http://hull-demos.hullapp.io',
+          debug:true,
+          sources: {
+            admin: "aura_components/admin"
+          }
+        });
+    </script>
 
   </head>
   <body>
@@ -37,7 +45,7 @@
         <!-- Background Component -->
         <div data-hull-component="background"></div>
         <!-- Quiz Component -->
-        <div data-hull-component="games/quiz" data-hull-login-first='false' data-hull-auto-advance='true' data-hull-id="5130a76ed4384e508f000009"></div>
+        <div data-hull-component="games/quiz" data-hull-id="5130a76ed4384e508f000009"></div>
     </div>
 
     <!-- Link to Hull -->

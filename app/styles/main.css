@@ -21,6 +21,9 @@ body{
     -webkit-font-smoothing: antialiased;
     background-color:#292e37;
     color:#fff;
+    -webkit-transition:all 0.3s ease-out;
+    -moz-transition:all 0.3s ease-out;
+    transition:all 0.3s ease-out;
 }
 strong{
     font-weight:700;
@@ -212,7 +215,8 @@ strong{
     text-align:center;
 }
   [class*="hull-form__fields__item--"] .hull-btn,
-  .hull-pager .hull-btn{
+  .hull-pager .hull-btn,
+  .hull-pager .btn{
       -webkit-transition:background-color 100ms ease;
       -moz-transition:background-color 100ms ease;
       transition:background-color 100ms ease;
