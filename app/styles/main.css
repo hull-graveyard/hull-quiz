@@ -54,7 +54,7 @@ strong{
     display: none;
   }
 
-[data-hull-component="background"]{display:none;}
+[data-hull-component="games/background"]{display:none;}
 [data-hull-component="games/quiz"]{
   display:inline-block;
   vertical-align:middle;
