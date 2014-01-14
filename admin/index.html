@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Hull Quiz Admin</title>
+
+  <meta name="viewport" content="initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <link rel="stylesheet" href="//hullstrap.s3.amazonaws.com/stylesheets/hullstrap.css">
+  <link rel="stylesheet" href="http://getbootstrap.com/2.3.2/assets/css/bootstrap-responsive.css">
+  <link rel="stylesheet" href="/styles/admin.css">
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+  <script src="https://d3f5pyioow99x0.cloudfront.net/0.7.12/hull.js"></script>
+  <script type="text/javascript">
+    Hull.init({
+      appId: "512633779e3903afd4000020",
+      orgUrl: 'http://hull-demos.hullapp.io',
+      debug: true,
+      sources: {
+        admin: "/aura_components/admin"
+      }
+    }, function(hull){});
+  </script>
+
+
+</head>
+
+<body>
+  <div data-hull-component="router@admin"></div>
+  <div class="container-fluid main">
+    <div class="row-fluid">
+      <span class="span3 panel left">
+        <div data-hull-component="left@admin"></div>
+      </span>
+      <span class="span9 panel">
+        <div data-hull-component="main@admin"></div>
+      </span>
+    </div>
+  </div>
+</body>
+
+</html>
