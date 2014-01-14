@@ -3,7 +3,7 @@ Hull.init({
   orgUrl: 'http://hull-demos.hullapp.io',
   debug:true,
   sources: {
-    admin: "aura_components/admin"
+    admin: "/aura_components/admin"
   }
 });
 

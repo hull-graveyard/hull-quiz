@@ -1,7 +1,7 @@
 {
-  "name": "hullcolors",
-  "version": "0.1.0",
+  "name": "hull-quiz",
+  "version": "0.1.1",
   "dependencies": {
-    "jquery": "1.8.x"
+    "jquery": "2.0.x"
   }
 }
